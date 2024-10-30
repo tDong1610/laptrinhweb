@@ -1,14 +1,17 @@
+const mysql = require('mysql');
 const db = mysql.createConnection({
-    host: 'localhost', // 127 .0.0.1
-    user : 'root',
+    host: 'localhost', // 127.0.0.1
+    user: 'root',
     password: '',
-    databasse: 'todolist_app'
+    database: 'todolist_app'
 });
-db.connect((err) =>{
+
+db.connect((err) => {
     if (err) {
-        console.error('database connection failed: ', err.stack);
+        console.error('Database connection failed: ', err.stack);
         return;
     }
-    console.log('connected to mysql database')
+    console.log('Connected to MySQL database');
 });
+
 module.exports = db;
